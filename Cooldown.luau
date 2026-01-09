@@ -1,4 +1,4 @@
---!strict
+já--!strict
 -- Cooldown.lua
 
 local Cooldown = {}
@@ -118,3 +118,12 @@ function Cooldown:ClearKeyEverywhere(key: Key)
 end
 
 return Cooldown
+
+
+
+
+--Exemple
+--It works for any player, ID, or instance.
+
+if Cooldown:IsActive(player, "Dash") then return end
+Cooldown:Set(player, "Dash", 2)
