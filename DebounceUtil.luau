@@ -105,3 +105,21 @@ Players.PlayerRemoving:Connect(function(player)
 end)
 
 return DebounceUtil
+
+
+-- Exemplo
+
+local CONFIG: DebounceUtil.Config = {
+	Cooldown = 1,       -- 1 segundo entre usos
+	MaxCalls = 5,       -- 5 chamadas
+	Window = 10,        -- em 10 segundos
+	MaxAbuse = 3,
+	Punishment = "Warn",
+}
+
+Remote.OnServerEvent:Connect(function(player)
+	if not DebounceUtil:CanRun(player, "Attack", CONFIG) then
+		return
+	end
+	print(player.Name, "atacou")
+end)
