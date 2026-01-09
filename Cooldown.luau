@@ -1,4 +1,4 @@
-já--!strict
+--!strict
 -- Cooldown.lua
 
 local Cooldown = {}
